@@ -6,6 +6,18 @@ using Serilog.Events;
 
 namespace GenericHostedConsoleApp;
 
+/**
+ * A simple demo Console App Hosted by the .NET Generic Host async.
+ * Using the Generic Host's built in:
+ *  - DI
+ *  - Configuration
+ *  - Logging (Using Serilog)
+ *
+ * From:
+ * https://www.code4it.dev/blog/dependency-injection-config-logging-in-console-application/
+ *
+ * Modified by me to fill out Serilog config and usage.
+ */
 class Program {
   static void Main(string[] args) {
     IHost host = CreateHost();
