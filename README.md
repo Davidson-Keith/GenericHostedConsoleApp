@@ -10,5 +10,4 @@ From:
 
 https://www.code4it.dev/blog/dependency-injection-config-logging-in-console-application/
 
-Modified by myself to fill out Serilog config and usage.
-
+Modified by myself to fill out Serilog setup, config, and usage.
