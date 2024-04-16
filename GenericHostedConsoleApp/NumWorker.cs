@@ -32,5 +32,8 @@ public class NumberWorker {
     logger.LogDebug($"KeyThree.Message = {config.KeyThree.Message}");
     logger.LogDebug($"KeyThree.SupportedVersions.v1 = {config.KeyThree.SupportedVersions.v1}");
     logger.LogDebug($"KeyThree.SupportedVersions.v3 = {config.KeyThree.SupportedVersions.v3}");
+    foreach (var address in config.IPAddressRange) {
+      logger.LogDebug($"IPAddress = {address}");
+    }
   }
 }

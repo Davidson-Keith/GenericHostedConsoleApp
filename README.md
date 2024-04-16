@@ -13,3 +13,4 @@ https://www.code4it.dev/blog/dependency-injection-config-logging-in-console-appl
 Modified by myself to:
 - Fill out Serilog setup, config, and usage.
 - Play with nested config settings. 
+- Add a JSON array to config settings.
