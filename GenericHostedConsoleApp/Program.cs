@@ -16,7 +16,9 @@ namespace GenericHostedConsoleApp;
  * From:
  * https://www.code4it.dev/blog/dependency-injection-config-logging-in-console-application/
  *
- * Modified by myself to fill out Serilog setup, config, and usage.
+ * Modified by myself to:
+ *  - Fill out Serilog setup, config, and usage.
+ *  - Play with nested config settings. 
  */
 class Program {
   static void Main(string[] args) {
@@ -24,6 +26,7 @@ class Program {
     Log.Logger.Debug($"Log file location = {Directory.GetCurrentDirectory()}");
     NumberWorker worker = ActivatorUtilities.CreateInstance<NumberWorker>(host.Services);
     worker.PrintNumber();
+    worker.PrintOtherSettings();
     Log.CloseAndFlush();
   }
 
@@ -32,6 +35,7 @@ class Program {
     return Host.CreateDefaultBuilder()
       .ConfigureServices((context, services) => {
         services.Configure<NumberConfig>(context.Configuration.GetSection("Number"));
+        services.Configure<OtherSettingsConfig>(context.Configuration.GetSection("OtherSettings"));
         services.AddSingleton<INumberRepository, NumberRepository>();
         services.AddSingleton<INumberService, NumberService>();
       })
