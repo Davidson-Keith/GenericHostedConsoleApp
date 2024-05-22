@@ -14,6 +14,3 @@ Modified by myself to:
 - Fill out Serilog setup, config, and usage.
 - Play with nested config settings. 
 - Add a JSON array to config settings.
-
-
-HI
